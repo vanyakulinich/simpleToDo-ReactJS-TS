@@ -1,0 +1,11 @@
+.customButton {
+    height: 40px;
+    width: 80px;
+    background-color: black;
+    color: wheat;
+    font-family: cursive;
+    text-transform: uppercase;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+  }
