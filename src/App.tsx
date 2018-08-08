@@ -32,9 +32,11 @@ class App extends React.Component<IProps, IState> {
   }
 
   public addNewItem = ()=>{
-    this.setState({
-      list: [...this.state.list, this.state.newItem]
-    })
+    if(this.state.newItem !== null){
+      this.setState({
+        list: [...this.state.list, this.state.newItem]
+      })
+    }
   }
 
   public deleteItem = (e:any):void=>{
@@ -49,7 +51,7 @@ class App extends React.Component<IProps, IState> {
     return (
       <div className="App">
         <div className ="App-todo-container">
-          <h6>{App.defaultProps.date}</h6>
+          <span className='date'>{App.defaultProps.date}</span>
 
           <div>
             <h3>TODO LIST</h3> 
@@ -63,7 +65,7 @@ class App extends React.Component<IProps, IState> {
               <Input onChange = {this.newItem}/>
               
               <Button 
-                text='add'
+                text='add new task'
                 addNewItem = {this.addNewItem}
               />
             </div>

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './style.css'
 
 interface IProps {
     element: string,
@@ -12,9 +13,9 @@ const SingleItem:React.SFC<IProps> = (props: IProps)=>{
     }
 
     return (
-        <li>
+        <li className = 'listItem'>
             {props.element}
-            <button onClick = {del}>x</button>
+            <button className='delButton' onClick = {del}>x</button>
         </li>
     )
 }

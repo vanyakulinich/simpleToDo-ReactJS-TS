@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 90%;
 }
 
 .todo-content{
@@ -28,5 +28,9 @@
   justify-content: center;
 }
 
+.date {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 15px;
+}
 
 
