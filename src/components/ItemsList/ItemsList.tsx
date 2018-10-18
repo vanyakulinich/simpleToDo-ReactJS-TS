@@ -5,16 +5,14 @@ import SingleItem from '../SingleItem/SingleItem'
 
 interface IListProps {
     list: string[],
-    deleteItem: (e:any)=>void,
+    deleteItem: (e:string) => void,
 }
 
-
-const ItemsList:React.SFC<IListProps>=(props: IListProps)=>{
-    const {list} = props;
+const ItemsList:React.SFC<IListProps> = ({list, deleteItem})=>{
     return(
         (list.length) ? 
             (<ul className='list'>
-                {list.map(el=><SingleItem key={el} element={el} deleteItem = {props.deleteItem}/>)}
+                {list.map(el => <SingleItem key={el} element={el} deleteItem={deleteItem}/>)}
             </ul>)
             :
             (<h3>No tasks in list.</h3>)

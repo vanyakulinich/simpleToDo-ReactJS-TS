@@ -3,7 +3,7 @@ import './style.css'
 
 interface IProps {
     element: string,
-    deleteItem: (e:any)=>any,
+    deleteItem: (e:string) => void,
 }
 
 const SingleItem:React.SFC<IProps> = (props: IProps)=>{
@@ -15,7 +15,7 @@ const SingleItem:React.SFC<IProps> = (props: IProps)=>{
     return (
         <li className = 'listItem'>
             {props.element}
-            <button className='delButton' onClick = {del}>x</button>
+            <button className='delButton' onClick={del}>x</button>
         </li>
     )
 }

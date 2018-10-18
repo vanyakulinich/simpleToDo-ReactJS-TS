@@ -11,7 +11,7 @@ interface IProps {
 }
 
 interface IState {
-  list: any[];
+  list: string[];
   newItem: string | null;
 }
 
@@ -24,14 +24,14 @@ class App extends React.Component<IProps, IState> {
     newItem: null
   }
 
-  public newItem = (e: any)=>{
-    const newItem = e.target.value;
+  public newItem = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const newItem: string = e.target.value;
     this.setState({
       newItem
     })
   }
 
-  public addNewItem = ()=>{
+  public addNewItem = (): void => {
     if(this.state.newItem !== null){
       this.setState({
         list: [...this.state.list, this.state.newItem]
@@ -39,8 +39,8 @@ class App extends React.Component<IProps, IState> {
     }
   }
 
-  public deleteItem = (e:any):void=>{
-    const newList = this.state.list.filter(el=>el!==e)
+  public deleteItem = (e:string):void=>{
+    const newList: string[] = this.state.list.filter(el=>el!==e)
     this.setState({
       list: newList
     })
